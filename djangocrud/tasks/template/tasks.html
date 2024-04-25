@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+{% extends 'base.html' %}
+
+{% block content %}
+<body class="bg-gray-100">
+    <div class="max-w-3xl mx-auto p-6 mt-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Tareas Pendientes</h1>
+        <ul class="space-y-4">
+            {% for task in tasks %}
+            <li class="bg-white shadow-md p-4 rounded-lg">
+                <a href="{% url 'task_detail' task.id %}">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            {% if task.important %}
+                            <span class="text-red-500 font-semibold mr-2">Important</span>
+                            {% endif %}
+                            <span class="text-lg font-semibold">{{ task.title }}</span>
+                        </div>
+                        <div class="text-gray-500">{{ task.user.username }}</div>
+                        <div class="text-gray-500">{{ task.datecompleted }}</div>
+                    </div>
+                    <p class="text-gray-700">{{ task.description }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <div class="mt-6">
+            <a href="/tasks/create" class="inline-block">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Create Task
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+</html>
