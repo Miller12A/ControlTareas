@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Task # type: ignore
+from .models import Task 
 
 class TaskForm(ModelForm):
     class Meta:

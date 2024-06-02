@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    {% extends 'base.html' %}
 
     {% block content %}
     <div class="bg-gray-100 flex items-center justify-center h-screen">
@@ -35,8 +34,9 @@
                         class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm">
                 </div>
                 <button type="submit"
-                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300">Iniciar
+                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300 w-full">Iniciar
                     Sesión</button>
+                <p class="block text-sm font-medium text-gray-700 mb-1 text-center">¿No tienes una cuenta?<a href="{% url 'signup' %}" class="text-blue-700 hover:underline"> Registrate ahora</a></p>
             </form>
         </div>
     </div>

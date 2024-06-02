@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Administrador de Tareas</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-
-    {% extends 'base.html' %}
-
+<body class="bg-gray-50 mt-[2rem]">
+    {% load static %}
     {% block content %}
-    <div class="bg-gray-100 py-12">
-        <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Bienvenido al Administrador de Tareas</h1>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        ¡Organiza tus tareas pendientes y completadas de manera efectiva con esta aplicación CRUD desarrollada con Django y Tailwind CSS!
+    <div class="bg-white shadow-md py-12">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2">
+                    <h1 class="text-5xl font-extrabold text-gray-800 mb-6">Bienvenido al Administrador de Tareas</h1>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        De ahora en adelante podras mantener un control de tus tareas, puedes usar esta novedosa herramienta tanto para uso personal como para uso empresarial o estudiantil,<span class="font-bold"> ¡NO HAY LIMITES!</span>, si necesitas organizar tus tareas, este es el lugar indicado.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
                         Mantén el control de tus actividades diarias y nunca olvides una tarea importante.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
                         Regístrate ahora para empezar a gestionar tus responsabilidades de forma más eficiente.
                     </p>
-                    <a href="{% url 'signup' %}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Regístrate Ahora</a>
+                    <a href="{% url 'signup' %}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300">Regístrate Ahora</a>
+                    <a href="{% url 'signin' %}" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300">Iniciar Sesion</a>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 md:pl-12">
+                    <img src="{% static '../static/img/portada.jpeg' %}" alt="Imagen de organización de tareas" class="w-full h-auto rounded-lg shadow-md">
                 </div>
             </div>
         </div>
     </div>
     {% endblock %}
-    
 
 </body>
 </html>
